@@ -1,0 +1,192 @@
+{
+  "trained_at_utc": "2026-10-19T11:53:19+00:00",
+  "sklearn_version": "1.9.1",
+  "dataset": {
+    "n_samples": 150,
+    "n_train": 120,
+    "n_test": 30,
+    "test_size": 0.2,
+    "random_state": 42
+  },
+  "cv_folds": 5,
+  "cv_results": {
+    "Logistic Regression": {
+      "mean": 0.9583333333333334,
+      "std": 0.026352313834736508,
+      "folds": [
+        0.9583333333333334,
+        1.0,
+        0.9583333333333334,
+        0.9583333333333334,
+        0.9166666666666666
+      ]
+    },
+    "k-Nearest Neighbours (k=5)": {
+      "mean": 0.9583333333333334,
+      "std": 0.026352313834736508,
+      "folds": [
+        0.9583333333333334,
+        1.0,
+        0.9583333333333334,
+        0.9166666666666666,
+        0.9583333333333334
+      ]
+    },
+    "Decision Tree (max depth 3)": {
+      "mean": 0.9583333333333334,
+      "std": 0.026352313834736508,
+      "folds": [
+        0.9583333333333334,
+        1.0,
+        0.9583333333333334,
+        0.9583333333333334,
+        0.9166666666666666
+      ]
+    },
+    "SVM (RBF kernel)": {
+      "mean": 0.9666666666666668,
+      "std": 0.016666666666666653,
+      "folds": [
+        0.9583333333333334,
+        1.0,
+        0.9583333333333334,
+        0.9583333333333334,
+        0.9583333333333334
+      ]
+    }
+  },
+  "selected_model": "Logistic Regression",
+  "selection_rule": "Highest mean 5-fold CV accuracy on the training set; models within 0.01 of the best are tie-broken in favour of the simpler model.",
+  "test": {
+    "accuracy": 0.9333333333333333,
+    "accuracy_ci95_wilson": [
+      0.7867654163738308,
+      0.9815229762087295
+    ],
+    "precision_macro": 0.9333333333333332,
+    "recall_macro": 0.9333333333333332,
+    "f1_macro": 0.9333333333333332,
+    "confusion_matrix": [
+      [
+        10,
+        0,
+        0
+      ],
+      [
+        0,
+        9,
+        1
+      ],
+      [
+        0,
+        1,
+        9
+      ]
+    ],
+    "classification_report": {
+      "setosa": {
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1-score": 1.0,
+        "support": 10.0
+      },
+      "versicolor": {
+        "precision": 0.9,
+        "recall": 0.9,
+        "f1-score": 0.9,
+        "support": 10.0
+      },
+      "virginica": {
+        "precision": 0.9,
+        "recall": 0.9,
+        "f1-score": 0.9,
+        "support": 10.0
+      },
+      "accuracy": 0.9333333333333333,
+      "macro avg": {
+        "precision": 0.9333333333333332,
+        "recall": 0.9333333333333332,
+        "f1-score": 0.9333333333333332,
+        "support": 30.0
+      },
+      "weighted avg": {
+        "precision": 0.9333333333333333,
+        "recall": 0.9333333333333333,
+        "f1-score": 0.9333333333333333,
+        "support": 30.0
+      }
+    },
+    "misclassified": [
+      {
+        "sepal_length": 6.1,
+        "sepal_width": 2.6,
+        "petal_length": 5.6,
+        "petal_width": 1.4,
+        "dataset_row": 134,
+        "true": "virginica",
+        "predicted": "versicolor"
+      },
+      {
+        "sepal_length": 6.7,
+        "sepal_width": 3.0,
+        "petal_length": 5.0,
+        "petal_width": 1.7,
+        "dataset_row": 77,
+        "true": "versicolor",
+        "predicted": "virginica"
+      }
+    ]
+  },
+  "permutation_importance": {
+    "sepal_length": {
+      "mean": 0.021111111111111105,
+      "std": 0.020153730163574503
+    },
+    "sepal_width": {
+      "mean": 0.052222222222222205,
+      "std": 0.03619221661089406
+    },
+    "petal_length": {
+      "mean": 0.19,
+      "std": 0.06785059840343124
+    },
+    "petal_width": {
+      "mean": 0.21555555555555553,
+      "std": 0.0782840664613713
+    }
+  },
+  "train_stats": {
+    "min": {
+      "sepal_length": 4.3,
+      "sepal_width": 2.0,
+      "petal_length": 1.1,
+      "petal_width": 0.1
+    },
+    "max": {
+      "sepal_length": 7.9,
+      "sepal_width": 4.4,
+      "petal_length": 6.9,
+      "petal_width": 2.5
+    },
+    "species_means": {
+      "setosa": {
+        "sepal_length": 4.985,
+        "sepal_width": 3.415,
+        "petal_length": 1.4775000000000003,
+        "petal_width": 0.255
+      },
+      "versicolor": {
+        "sepal_length": 5.93,
+        "sepal_width": 2.75,
+        "petal_length": 4.2525,
+        "petal_width": 1.3199999999999998
+      },
+      "virginica": {
+        "sepal_length": 6.609999999999999,
+        "sepal_width": 2.98,
+        "petal_length": 5.58,
+        "petal_width": 2.04
+      }
+    }
+  }
+}
