@@ -1,9 +1,13 @@
 # 🌸 Iris Species Classifier
 
 An interactive machine-learning web application that identifies the species of an iris flower
-(*setosa*, *versicolor* or *virginica*) from four measurements, and explains how it reached its decision.
+(_setosa_, _versicolor_ or _virginica_) from four measurements, and explains how it reached its decision.
 
 **Author:** Arya Kumar · AI/ML internship project
+
+---
+
+**Live Demo:** https://iris-flower-classification-jwwj.streamlit.app/
 
 ---
 
@@ -23,32 +27,32 @@ and trust appropriately.
 
 ## Features
 
-| Area | What it does |
-|---|---|
-| **Predict** | Sliders for the four measurements; one-click real examples, including a genuinely ambiguous flower |
-| **Result** | Predicted species, probability for every species, and a plain-language confidence note |
-| **Decision map** | The model's decision regions over petal length × petal width, with your flower marked as a star |
-| **Comparison** | Your measurements next to the average of each species |
-| **Extrapolation warning** | Flags any value outside the range seen during training |
-| **Model card** | Real test metrics, confusion matrix, 5-fold CV comparison of 4 models, permutation importance, misclassified flowers |
-| **How it works** | The pipeline, the softmax equation, and what the model can and cannot tell you |
-| **Dataset** | Species photo gallery (illustrative), interactive scatter matrix, summary statistics, raw data and source |
-| **Light / dark mode** | Both themes supported (⋮ menu → Settings → Theme) |
+| Area                      | What it does                                                                                                         |
+| ------------------------- | -------------------------------------------------------------------------------------------------------------------- |
+| **Predict**               | Sliders for the four measurements; one-click real examples, including a genuinely ambiguous flower                   |
+| **Result**                | Predicted species, probability for every species, and a plain-language confidence note                               |
+| **Decision map**          | The model's decision regions over petal length × petal width, with your flower marked as a star                      |
+| **Comparison**            | Your measurements next to the average of each species                                                                |
+| **Extrapolation warning** | Flags any value outside the range seen during training                                                               |
+| **Model card**            | Real test metrics, confusion matrix, 5-fold CV comparison of 4 models, permutation importance, misclassified flowers |
+| **How it works**          | The pipeline, the softmax equation, and what the model can and cannot tell you                                       |
+| **Dataset**               | Species photo gallery (illustrative), interactive scatter matrix, summary statistics, raw data and source            |
+| **Light / dark mode**     | Both themes supported (⋮ menu → Settings → Theme)                                                                    |
 
 Every number in the app is read from `models/metrics.json`, which is written by the training script.
 Nothing is hard-coded.
 
 ## Technology stack
 
-| Layer | Tool |
-|---|---|
-| Language | Python 3.13 |
-| Machine learning | scikit-learn 1.9 (Pipeline, StandardScaler, LogisticRegression, cross-validation, permutation importance) |
-| Data | pandas, NumPy |
-| Web application | Streamlit 1.66 |
-| Charts | Plotly (interactive) |
-| Model persistence | joblib |
-| Testing | pytest + Streamlit `AppTest` (headless app tests) |
+| Layer             | Tool                                                                                                      |
+| ----------------- | --------------------------------------------------------------------------------------------------------- |
+| Language          | Python 3.13                                                                                               |
+| Machine learning  | scikit-learn 1.9 (Pipeline, StandardScaler, LogisticRegression, cross-validation, permutation importance) |
+| Data              | pandas, NumPy                                                                                             |
+| Web application   | Streamlit 1.66                                                                                            |
+| Charts            | Plotly (interactive)                                                                                      |
+| Model persistence | joblib                                                                                                    |
+| Testing           | pytest + Streamlit `AppTest` (headless app tests)                                                         |
 
 ## Dataset
 
@@ -56,7 +60,7 @@ Nothing is hard-coded.
 It is loaded with `sklearn.datasets.load_iris()`, so **no download is required**. scikit-learn's copy follows
 Fisher's original paper; the UCI copy contains two transcription errors.
 
-- Source: R. A. Fisher (1936), *The use of multiple measurements in taxonomic problems*, Annals of Eugenics 7(2).
+- Source: R. A. Fisher (1936), _The use of multiple measurements in taxonomic problems_, Annals of Eugenics 7(2).
 - Licence: UCI Machine Learning Repository, CC BY 4.0. Distributed with scikit-learn (BSD-3-Clause).
 
 ## Architecture
@@ -105,14 +109,14 @@ The app opens at **http://localhost:8501**. Stop it with `Ctrl + C`. Run the tes
 
 ### Common startup problems
 
-| Symptom | Fix |
-|---|---|
-| `Activate.ps1 cannot be loaded because running scripts is disabled` | Run `Set-ExecutionPolicy -Scope Process -ExecutionPolicy Bypass`, then activate again (affects this window only) |
-| `streamlit` / `python` is not recognised, or `ModuleNotFoundError` | The environment is not active: run the `Activate.ps1` line again; always start the app with `python -m streamlit run app.py` |
-| `ModuleNotFoundError: No module named 'src'` | You are not in the project folder; `cd` into the folder that contains `app.py` |
-| `Port 8501 is already in use` | Another app is running; stop it, or use `python -m streamlit run app.py --server.port 8502` |
-| `WinError 206: The filename or extension is too long` during `pip install` | Create the environment at a short path such as `C:\venvs\iris` (as above) |
-| The browser does not open | Open http://localhost:8501 manually |
+| Symptom                                                                    | Fix                                                                                                                          |
+| -------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------------------- |
+| `Activate.ps1 cannot be loaded because running scripts is disabled`        | Run `Set-ExecutionPolicy -Scope Process -ExecutionPolicy Bypass`, then activate again (affects this window only)             |
+| `streamlit` / `python` is not recognised, or `ModuleNotFoundError`         | The environment is not active: run the `Activate.ps1` line again; always start the app with `python -m streamlit run app.py` |
+| `ModuleNotFoundError: No module named 'src'`                               | You are not in the project folder; `cd` into the folder that contains `app.py`                                               |
+| `Port 8501 is already in use`                                              | Another app is running; stop it, or use `python -m streamlit run app.py --server.port 8502`                                  |
+| `WinError 206: The filename or extension is too long` during `pip install` | Create the environment at a short path such as `C:\venvs\iris` (as above)                                                    |
+| The browser does not open                                                  | Open http://localhost:8501 manually                                                                                          |
 
 ## How to use
 
@@ -124,22 +128,22 @@ The app opens at **http://localhost:8501**. Stop it with `Ctrl + C`. Run the tes
 
 ## Results (held-out test set, 30 flowers)
 
-| Metric | Value |
-|---|---|
-| Selected model | Multinomial Logistic Regression (with standard scaling) |
-| Test accuracy | **93.3%** (28 / 30); 95% confidence interval 78.7%–98.2% |
-| Macro precision / recall / F1 | 0.933 / 0.933 / 0.933 |
-| Setosa F1 | 1.00 |
-| Versicolor / Virginica F1 | 0.90 / 0.90 |
+| Metric                        | Value                                                    |
+| ----------------------------- | -------------------------------------------------------- |
+| Selected model                | Multinomial Logistic Regression (with standard scaling)  |
+| Test accuracy                 | **93.3%** (28 / 30); 95% confidence interval 78.7%–98.2% |
+| Macro precision / recall / F1 | 0.933 / 0.933 / 0.933                                    |
+| Setosa F1                     | 1.00                                                     |
+| Versicolor / Virginica F1     | 0.90 / 0.90                                              |
 
 5-fold cross-validation accuracy on the training set (mean ± std):
 
-| Model | CV accuracy |
-|---|---|
+| Model                              | CV accuracy   |
+| ---------------------------------- | ------------- |
 | **Logistic Regression** (selected) | 0.958 ± 0.026 |
-| k-Nearest Neighbours (k=5) | 0.958 ± 0.026 |
-| Decision Tree (max depth 3) | 0.958 ± 0.026 |
-| SVM (RBF kernel) | 0.967 ± 0.017 |
+| k-Nearest Neighbours (k=5)         | 0.958 ± 0.026 |
+| Decision Tree (max depth 3)        | 0.958 ± 0.026 |
+| SVM (RBF kernel)                   | 0.967 ± 0.017 |
 
 The SVM scored highest, but it is within the 0.01 tolerance and the selection rule prefers the simpler,
 more interpretable model on near-ties. The difference amounts to one flower in 120. Both test errors are
