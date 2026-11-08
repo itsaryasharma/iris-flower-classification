@@ -1,4 +1,4 @@
----
+
 ## Internship Details
 
 - **Company:** CODTECH IT SOLUTIONS PRIVATE LIMITED
@@ -7,7 +7,7 @@
 - **Domain:** Artificial Intelligence
 - **Duration:** 4 Weeks
 - **Mentor:** Neela Santosh
----
+
 
 # 🌸 Iris Species Classifier
 
