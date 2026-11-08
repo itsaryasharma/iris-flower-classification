@@ -1,3 +1,14 @@
+---
+## Internship Details
+
+- **Company:** CODTECH IT SOLUTIONS PRIVATE LIMITED
+- **Name:** Arya Kumar
+- **Intern ID:** CITS9801
+- **Domain:** Artificial Intelligence
+- **Duration:** 4 Weeks
+- **Mentor:** Neela Santosh
+---
+
 # 🌸 Iris Species Classifier
 
 An interactive machine-learning web application that identifies the species of an iris flower
